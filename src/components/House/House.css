@@ -1,7 +1,11 @@
 .houseListing {
+  list-style: none;
   width: 100%;
+  margin-bottom: 20px;
+  text-align: center;
+  border: 1px solid black;
 }
 
-.houseImage {
-  width: 200px;
+.houseImage img {
+  width: 100%;
 }

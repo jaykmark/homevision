@@ -1,25 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-
 import House from '../components/House/House';
 
 function ListingsContainer() {
-  const [houses, setHouses] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const [page, setPage] = useState(1);
-  const [housesPerPage, setHousesPerPage] = useState(10);
-  const API_URL = `http://app-homevision-staging.herokuapp.com/api_project/houses?page=${page}&per_page=${housesPerPage}`
+  const [houses, setHouses] = useState([]);
+  const [pageNumber, setPageNumber] = useState(1);
+  const [housesPerPage, setHousesPerPage] = useState(5);
 
-  // Initial API call on page load
+  // API call
   useEffect(() => {
+    const API_URL = `http://app-homevision-staging.herokuapp.com/api_project/houses?page=${pageNumber}&per_page=${housesPerPage}`
+
     const fetchData = async () => {
-      setError(false);
       setLoading(true);
+      setError(false);
+      console.log(API_URL);
 
       try {
-        const res = await axios(API_URL)
-        setHouses([...houses, ...res.data.houses])
+        const res = await axios.get(API_URL)
+        setHouses((prevHouses) => {
+          return [...prevHouses, ...res.data.houses]
+        })
+        console.log(houses);
       } catch (error) {
         setError(true);
       }
@@ -28,25 +32,21 @@ function ListingsContainer() {
     };
 
     fetchData();
-  }, [API_URL])
+  }, [pageNumber])
 
   return (
-    <div className="houseList">
-      <h1>Homevision</h1>
-      {error && <div>WRONG</div>}
-      {loading ? (
-        <div>Loading...</div>
-      ) : (
-          <ul>
-            {houses.map((house) => {
-              return (
-                <House house={house} key={house.id} />
-              )
-            })}
-          </ul>
-        )}
-      <button onClick={() => setPage((prevPage) => prevPage + 1)}>Load More</button>
-    </div>
+    <>
+      <ul>
+        {houses.map((house) => {
+          return (
+            <House house={house} key={house.id} />
+          )
+        })}
+      </ul>
+      <button onClick={() => setPageNumber((prevPage) => prevPage + 1)} className="loadMore">Load More</button>
+      {loading && <div className="loadingMessage">Loading...</div>}
+      {error && <div className="errorMessage">ERROR</div>}
+    </>
   )
 }
 

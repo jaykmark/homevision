@@ -2,17 +2,18 @@ import React from 'react';
 import './House.css'
 
 function House({ house }) {
-  const { id, price, address, homeowner, photoURL } = house
+  const { price, address, homeowner, photoURL } = house
+  const commaSeparatedPrice = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
   return (
-    <li key={id} className="houseListing">
+    <>
       <div className="houseImage">
         <img src={photoURL} alt="houseImage" />
-        ${price}
+        <h3>${commaSeparatedPrice}</h3>
       </div>
-      <h4>{address}</h4>
-      <h5>Homeowner: {homeowner}</h5>
-    </li>
+      <h3>{address}</h3>
+      <h4>Homeowner: {homeowner}</h4>
+    </>
   )
 }
 
