@@ -8,3 +8,8 @@
   margin: 5%;
   text-align: center;
 }
+
+.houseGallery {
+  max-height: 90vh;
+  overflow: scroll;
+}
