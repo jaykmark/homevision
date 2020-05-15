@@ -7,12 +7,6 @@
   font-family: 'Roboto';
 }
 
-@media (max-width: 700px) {
-  .container {
-    margin: 0;
-  }
-}
-
 .container {
   height: 100vh;
   margin: 0 15vh 0 15vh;
@@ -62,4 +56,23 @@
   color: red;
   font-size: 32px;
   margin: 5px;
+}
+
+@media (max-width: 700px) {
+  .container {
+    margin: 0;
+    width: 100vw;
+  }
+  .houseGallery {
+    width: 100%;
+  }
+  .priceFilter {
+    font-size: 18px;
+    width: 100%;
+  }
+  .priceFilter input {
+    height: 35px;
+    width: 120px;
+    font-size: 18px;
+  }
 }

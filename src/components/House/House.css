@@ -1,26 +1,47 @@
 .houseListing {
   list-style: none;
   width: 100%;
-  margin-bottom: 20px;
   text-align: center;
-  border: 1px solid grey;
+  border-bottom: 1px solid grey;
+  padding: 10px 0 10px 0;
 }
 
 .houseImage img {
-  width: 100%;
+  height: 400px;
 }
 
 .housePrice {
-  font-size: 48px;
+  font-size: 32px;
   margin: 5px;
 }
 
 .houseAddress {
-  font-size: 32px;
+  font-size: 24px;
   margin: 5px;
 }
 
 .houseOwner {
   font-size: 18px;
-  margin: 10px;
+  margin-top: 5px;
+}
+
+@media (max-width: 700px) {
+  .houseImage img {
+    width: 100%;
+  }
+  
+  .housePrice {
+    font-size: 32px;
+    margin: 5px;
+  }
+  
+  .houseAddress {
+    font-size: 18px;
+    margin: 5px;
+  }
+  
+  .houseOwner {
+    font-size: 12px;
+    margin: 10px;
+  }
 }

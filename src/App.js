@@ -17,6 +17,7 @@ const App = () => {
   const [houses, setHouses] = useState([]);
   const [filteredHouses, setFilteredHouses] = useState([]);
 
+  // API call to load houses.
   useEffect(() => {
     const fetchHouseData = async (attemptsLeft) => {
       setLoading(true);
@@ -50,7 +51,7 @@ const App = () => {
     if (loadMore) fetchHouseData(10);
   }, [loadMore])
 
-  // Update filtered houses on filter change
+  // Update filtered houses on filter change.
   useEffect(() => {
     if (priceFilterApplied) {
       const newlyFilteredHouses = houses.filter((house) => {
@@ -80,7 +81,7 @@ const App = () => {
     }
   }
 
-  // Infinite Scroll - Ref assigned to last house in gallery triggers an API call to load more houses
+  // Infinite Scroll - Ref assigned to last house in gallery triggers an API call to load more houses.
   const observer = useRef();
   const lastHouseElementRef = useCallback((node) => {
     if (loading) return;
