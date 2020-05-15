@@ -19,7 +19,7 @@ Clone down this repository:
 
 `$ git clone https://github.com/jaykmark/homevision.git`
 
-You will need `node` and `npm` or `yarn` installed on your machine.  
+You will need `node` and `npm` or some package manager installed on your machine.  
 
 Installation (w/ npm):
 
