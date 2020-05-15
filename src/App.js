@@ -63,13 +63,13 @@ const App = () => {
 
   const handleFilterChange = (event) => {
     const { name, value } = event.target;
-    // Set non-number inputs to default filter value.
-    if (isNaN(value) || value === '') {
-      setPriceFilter({ ...priceFilter, [name]: name === 'filterMax' ? Infinity : 0 })
-      console.log(priceFilter);
+    const commaSeparatedNumberRegex = /^[-+]?[0-9]+(?:,[0-9]{3})*(?:\.[0-9]+)?$/
+
+    if (commaSeparatedNumberRegex.test(value)) {
+      const normalizedValue = value.replace(/,/g, '')
+      setPriceFilter({ ...priceFilter, [name]: normalizedValue })
     } else {
-      setPriceFilter({ ...priceFilter, [name]: value })
-      console.log(priceFilter);
+      setPriceFilter({ ...priceFilter, [name]: name === 'filterMax' ? Infinity : 0 })
     }
   }
 
@@ -96,12 +96,12 @@ const App = () => {
 
   return (
     <div className="container">
-      <img className="homeVisionLogo" src={homeVisionLogo} alt="HomeVision Banner" />
+      <a href="https://homevision.co/" target="_blank" rel="noopener noreferrer"><img className="homeVisionLogo" src={homeVisionLogo} alt="HomeVision Banner" /></a>
       <div className="priceFilter">
-        <input type="text" name="filterMin" onChange={handleFilterChange} value={priceFilter.min} placeholder="min" />
-        <span>-</span>
-        <input type="text" name="filterMax" onChange={handleFilterChange} value={priceFilter.max} placeholder="max" />
-        <label>Filter<input type="checkbox" name="applyFilter" onChange={applyPriceFilter} /></label>
+        <label>$<input type="text" name="filterMin" onChange={handleFilterChange} value={priceFilter.min} placeholder="min" /></label>
+        <span>--</span>
+        <label>$<input type="text" name="filterMax" onChange={handleFilterChange} value={priceFilter.max} placeholder="max" /></label>
+        <label>Filter<input className="priceFilterCheckbox" type="checkbox" name="applyFilter" onChange={applyPriceFilter} /></label>
       </div>
       <div className="houseGallery">
         {priceFilterApplied ?
