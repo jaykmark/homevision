@@ -1,15 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Roboto';
+}
+
+@media (max-width: 700px) {
+  .container {
+    margin: 0;
+  }
 }
 
 .container {
-  margin: 5%;
+  height: 100vh;
+  margin: 0 15vh 0 15vh;
   text-align: center;
 }
 
+.homeVisionLogo {
+  height: 50px;
+  margin-top: 20px;
+}
+
 .houseGallery {
-  max-height: 90vh;
+  height: 75vh;
+  border: 1px solid grey;
   overflow: scroll;
+}
+
+.priceFilter {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+.priceFilter label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+
+.priceFilter input {
+  height: 50px;
+  margin: 5px;
+  padding: 10px;
+  font-size: 24px;
+}
+
+.loadingMessage p {
+  font-size: 32px;
+  margin: 5px;
+}
+
+.errorMessage p {
+  color: red;
+  font-size: 32px;
+  margin: 5px;
 }

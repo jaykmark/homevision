@@ -9,10 +9,10 @@ function House({ house }) {
     <>
       <div className="houseImage">
         <img src={photoURL} alt="houseImage" />
-        <h3>${commaSeparatedPrice}</h3>
+        <h3 className="housePrice">${commaSeparatedPrice}</h3>
       </div>
-      <h3>{address}</h3>
-      <h4>Homeowner: {homeowner}</h4>
+      <h3 className="houseAddress">{address}</h3>
+      <h4 className="houseOwner">Homeowner: {homeowner}</h4>
     </>
   )
 }
