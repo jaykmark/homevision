@@ -3,8 +3,8 @@
 - Filter houses by price.
 
 <p align="center">
-  <img src="./src/static/home-vision-screenshot" alt="Home Vision screenshot"
-	title="Ascent Home Page" align="center" width="600" />
+  <img src="./src/static/home-vision-screenshot.png" alt="Home Vision screenshot"
+	title="Home Vision screenshot" align="center" width="600" />
 </p>
 
 ## Installation & Set Up
