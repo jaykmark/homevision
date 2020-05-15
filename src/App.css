@@ -20,8 +20,16 @@
 
 .houseGallery {
   height: 75vh;
-  border: 1px solid grey;
+  border: 1px solid #D3D3D3;
   overflow: scroll;
+}
+
+.houseListing {
+  list-style: none;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #D3D3D3;
+  padding: 20px 0 20px 0;
 }
 
 .priceFilter {
@@ -49,7 +57,6 @@
 
 .priceFilter input[type=checkbox] {
   margin: 15px;
-  /* Double-sized Checkboxes */
   -ms-transform: scale(2); /* IE */
   -moz-transform: scale(2); /* FF */
   -webkit-transform: scale(2); /* Safari and Chrome */
@@ -76,6 +83,10 @@
   }
   .houseGallery {
     width: 100%;
+  }
+  .houseListing {
+    padding: 0;
+    margin-bottom: 10px;
   }
   .priceFilter {
     font-size: 18px;

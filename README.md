@@ -1,3 +1,7 @@
+## Tech
+- React w/ Hooks.
+- Axios for data fetching.
+
 ## Features
 - Infinite scrolling.
 - Filter houses by price.
@@ -12,13 +16,13 @@ Clone down this repository:
 
 `$ git clone https://github.com/jaykmark/homevision.git`
 
-You will need `node` and `npm` installed globally on your machine.  
+You will need `node` and `npm` or `yarn` installed on your machine.  
 
-Installation:
+Installation (w/ npm):
 
 `$ npm install`  
 
-To Start Server:
+To Start Server (w/ npm):
 
 `$ npm start`  
 

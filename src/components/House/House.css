@@ -1,11 +1,3 @@
-.houseListing {
-  list-style: none;
-  width: 100%;
-  text-align: center;
-  border-bottom: 1px solid grey;
-  padding: 20px 0 20px 0;
-}
-
 .houseImage img {
   height: 400px;
 }
@@ -26,24 +18,17 @@
 }
 
 @media (max-width: 700px) {
-  .houseListing {
-    padding: 0;
-  }
-
   .houseImage img {
-    width: 100%;
+    height: 300px;
   }
-  
   .housePrice {
     font-size: 32px;
     margin: 5px;
   }
-  
   .houseAddress {
     font-size: 18px;
     margin: 5px;
   }
-  
   .houseOwner {
     font-size: 12px;
     margin: 10px;
