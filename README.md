@@ -2,10 +2,12 @@
 - Infinite scrolling.
 - Filter houses by price.
 
+<kbd>
 <p align="center">
   <img src="./src/static/home-vision-screenshot.png" alt="Home Vision screenshot"
 	title="Home Vision screenshot" align="center" width="600" />
 </p>
+</kbd>
 
 ## Installation & Set Up
 Clone down this repository:
