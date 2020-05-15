@@ -8,7 +8,7 @@ import './App.css';
 const App = () => {
   const [loadMoreHouses, setLoadMoreHouses] = useState(true);
   const [pageNumber, setPageNumber] = useState(1);
-  const [housesPerPage] = useState(5);
+  const [housesPerPage] = useState(10);
 
   const [priceFilter, setPriceFilter] = useState({ filterMin: 0, filterMax: Infinity });
   const [priceFilterApplied, setPriceFilterApplied] = useState(false);
@@ -149,7 +149,7 @@ const App = () => {
           </div>}
         {!houses &&
           <div className="errorMessage">
-            <p>No more houses available...</p>
+            <p>No houses available.</p>
           </div>}
         {error &&
           <div className="errorMessage">
